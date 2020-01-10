@@ -9,25 +9,33 @@
 /* Begin PBXBuildFile section */
 		D365FCB523C881240012F35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB423C881240012F35E /* AppDelegate.swift */; };
 		D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB623C881240012F35E /* SceneDelegate.swift */; };
-		D365FCB923C881240012F35E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB823C881240012F35E /* ViewController.swift */; };
 		D365FCBC23C881240012F35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBA23C881240012F35E /* Main.storyboard */; };
 		D365FCBE23C881260012F35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBD23C881260012F35E /* Assets.xcassets */; };
 		D365FCC123C881260012F35E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBF23C881260012F35E /* LaunchScreen.storyboard */; };
 		D3B88B6023C8830100B24AB4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B5F23C8830100B24AB4 /* Category.swift */; };
 		D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6123C8835E00B24AB4 /* Field.swift */; };
+		D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */; };
+		D3B88B6623C8846400B24AB4 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6523C8846400B24AB4 /* Student.swift */; };
+		D3B88B6C23C88C8A00B24AB4 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */; };
+		D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */; };
+		D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D365FCB123C881240012F35E /* SISimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D365FCB423C881240012F35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D365FCB623C881240012F35E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D365FCB823C881240012F35E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D365FCBB23C881240012F35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D365FCBD23C881260012F35E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D365FCC023C881260012F35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D365FCC223C881260012F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B88B5F23C8830100B24AB4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D3B88B6123C8835E00B24AB4 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDepartmentEmployer.swift; sourceTree = "<group>"; };
+		D3B88B6523C8846400B24AB4 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +68,11 @@
 		D365FCB323C881240012F35E /* SISimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D3B88B6A23C88C7700B24AB4 /* Controller */,
+				D3B88B6723C88BB400B24AB4 /* View */,
 				D3B88B5E23C882F000B24AB4 /* Model */,
 				D365FCB423C881240012F35E /* AppDelegate.swift */,
 				D365FCB623C881240012F35E /* SceneDelegate.swift */,
-				D365FCB823C881240012F35E /* ViewController.swift */,
 				D365FCBA23C881240012F35E /* Main.storyboard */,
 				D365FCBD23C881260012F35E /* Assets.xcassets */,
 				D365FCBF23C881260012F35E /* LaunchScreen.storyboard */,
@@ -77,8 +86,27 @@
 			children = (
 				D3B88B5F23C8830100B24AB4 /* Category.swift */,
 				D3B88B6123C8835E00B24AB4 /* Field.swift */,
+				D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */,
+				D3B88B6523C8846400B24AB4 /* Student.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D3B88B6723C88BB400B24AB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */,
+				D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3B88B6A23C88C7700B24AB4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +181,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */,
-				D365FCB923C881240012F35E /* ViewController.swift in Sources */,
+				D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */,
+				D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */,
+				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,
+				D3B88B6C23C88C8A00B24AB4 /* SetupViewController.swift in Sources */,
+				D3B88B6623C8846400B24AB4 /* Student.swift in Sources */,
 				D3B88B6023C8830100B24AB4 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

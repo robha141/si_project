@@ -13,4 +13,8 @@ enum Field {
     case cestovnyRuch
     case ekonomickaInformatika
     case zahranicniStudenti
+
+    var categories: [Category] {
+        fatalError()
+    }
 }
