@@ -9,5 +9,6 @@
 import Foundation
 
 enum Category {
-    
+    case category1
+    case category2
 }

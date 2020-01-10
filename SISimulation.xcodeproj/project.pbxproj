@@ -19,6 +19,7 @@
 		D3B88B6C23C88C8A00B24AB4 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */; };
 		D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */; };
 		D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */; };
+		D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStudentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */,
+				D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */,
 				D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */,
+				D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */,
 				D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */,
 				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
