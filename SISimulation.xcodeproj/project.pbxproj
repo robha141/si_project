@@ -13,6 +13,8 @@
 		D365FCBC23C881240012F35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBA23C881240012F35E /* Main.storyboard */; };
 		D365FCBE23C881260012F35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBD23C881260012F35E /* Assets.xcassets */; };
 		D365FCC123C881260012F35E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBF23C881260012F35E /* LaunchScreen.storyboard */; };
+		D3B88B6023C8830100B24AB4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B5F23C8830100B24AB4 /* Category.swift */; };
+		D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6123C8835E00B24AB4 /* Field.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D365FCBD23C881260012F35E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D365FCC023C881260012F35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D365FCC223C881260012F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B88B5F23C8830100B24AB4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D3B88B6123C8835E00B24AB4 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		D365FCB323C881240012F35E /* SISimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D3B88B5E23C882F000B24AB4 /* Model */,
 				D365FCB423C881240012F35E /* AppDelegate.swift */,
 				D365FCB623C881240012F35E /* SceneDelegate.swift */,
 				D365FCB823C881240012F35E /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				D365FCC223C881260012F35E /* Info.plist */,
 			);
 			path = SISimulation;
+			sourceTree = "<group>";
+		};
+		D3B88B5E23C882F000B24AB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3B88B5F23C8830100B24AB4 /* Category.swift */,
+				D3B88B6123C8835E00B24AB4 /* Field.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */,
 				D365FCB923C881240012F35E /* ViewController.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,
+				D3B88B6023C8830100B24AB4 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
