@@ -20,6 +20,8 @@
 		D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */; };
 		D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */; };
 		D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */; };
+		D3B88B7723C899E500B24AB4 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7623C899E500B24AB4 /* Simulation.swift */; };
+		D3B88B7923C89A7000B24AB4 /* StudentSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7823C89A7000B24AB4 /* StudentSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStudentsViewController.swift; sourceTree = "<group>"; };
+		D3B88B7623C899E500B24AB4 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		D3B88B7823C89A7000B24AB4 /* StudentSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				D365FCBD23C881260012F35E /* Assets.xcassets */,
 				D365FCBF23C881260012F35E /* LaunchScreen.storyboard */,
 				D365FCC223C881260012F35E /* Info.plist */,
+				D3B88B7623C899E500B24AB4 /* Simulation.swift */,
+				D3B88B7823C89A7000B24AB4 /* StudentSetup.swift */,
 			);
 			path = SISimulation;
 			sourceTree = "<group>";
@@ -185,8 +191,10 @@
 			files = (
 				D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */,
 				D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */,
+				D3B88B7723C899E500B24AB4 /* Simulation.swift in Sources */,
 				D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */,
 				D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */,
+				D3B88B7923C89A7000B24AB4 /* StudentSetup.swift in Sources */,
 				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,

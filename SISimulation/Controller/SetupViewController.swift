@@ -23,11 +23,15 @@ final class SetupViewController: UITableViewController {
         SetupViewControllerItems.panel(value: false),
         SetupViewControllerItems.simulate
     ]
+    private var studentSetup = StudentSetup()
 
-    // MARK: - lifecycle
+    // MARK: - prepareForSegue
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StudentSetup",
+            let controller = segue.destination as? SetupStudentsViewController {
+            controller.studentSetup = studentSetup
+        }
     }
 
     // MARK: - simulate
@@ -61,7 +65,7 @@ final class SetupViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "DetailCell",
                 for: indexPath)
-            cell.textLabel?.text = "Setup students"
+            cell.textLabel?.text = "Student distribution setup"
             return cell
         case let .panel(value: value):
             let cell = tableView.dequeueReusableCell(

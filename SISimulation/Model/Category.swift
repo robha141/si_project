@@ -11,4 +11,8 @@ import Foundation
 enum Category {
     case category1
     case category2
+
+    var title: String {
+        return "TODO: - make title for category \(self)"
+    }
 }

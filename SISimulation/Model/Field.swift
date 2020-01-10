@@ -8,11 +8,15 @@
 
 import Foundation
 
-enum Field {
+enum Field: Int, CaseIterable {
     case finance
     case cestovnyRuch
     case ekonomickaInformatika
     case zahranicniStudenti
+
+    var title: String {
+        return "TODO: - make title for field \(self)"
+    }
 
     var categories: [Category] {
         fatalError()
