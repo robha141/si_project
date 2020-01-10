@@ -19,7 +19,7 @@ final class SetupStudentsViewController: UITableViewController {
     // MARK: - properties
 
     var studentSetup: StudentSetup?
-    var onSave: (SetupStudentsViewController) -> Void = { _ in }
+    var onSave: (StudentSetup) -> Void = { _ in }
     private let distributionCellId = "DistributionCell"
 
     // MARK: - view properties
@@ -37,8 +37,25 @@ final class SetupStudentsViewController: UITableViewController {
 
     // MARK: - actions
 
+    @IBAction func saveDistribution(_ sender: UIBarButtonItem) {
+        guard let setup = studentSetup else { return }
+        do {
+            try setup.evaluateValues()
+            onSave(setup)
+            navigationController?.popViewController(animated: true)
+        } catch let error as StudentSetupError {
+            makeAlert(
+                title: "Items are not distributed properly",
+                message: error.localizedDescription)
+        } catch {
+            makeAlert(
+                title: "Items are not distributed properly",
+                message: error.localizedDescription)
+        }
+    }
+    
     @IBAction func newNumberOfStudents(_ sender: UITextField) {
-        print("New number: \(sender.text)")
+        studentSetup?.numberOfStudents = Int(sender.text ?? "0") ?? 0
     }
 
 

@@ -25,6 +25,7 @@
 		D3B88B7C23C8A19E00B24AB4 /* FieldDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7B23C8A19E00B24AB4 /* FieldDistribution.swift */; };
 		D3B88B7E23C8A1AF00B24AB4 /* CategoryDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7D23C8A1AF00B24AB4 /* CategoryDistribution.swift */; };
 		D3B88B8023C8A78900B24AB4 /* DistributionSetupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7F23C8A78900B24AB4 /* DistributionSetupCell.swift */; };
+		D3B88B8323C8B93400B24AB4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B8223C8B93400B24AB4 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D3B88B7B23C8A19E00B24AB4 /* FieldDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldDistribution.swift; sourceTree = "<group>"; };
 		D3B88B7D23C8A1AF00B24AB4 /* CategoryDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDistribution.swift; sourceTree = "<group>"; };
 		D3B88B7F23C8A78900B24AB4 /* DistributionSetupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionSetupCell.swift; sourceTree = "<group>"; };
+		D3B88B8223C8B93400B24AB4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		D365FCB323C881240012F35E /* SISimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D3B88B8123C8B91D00B24AB4 /* Extensions */,
 				D365FCC223C881260012F35E /* Info.plist */,
 				D365FCB423C881240012F35E /* AppDelegate.swift */,
 				D365FCB623C881240012F35E /* SceneDelegate.swift */,
@@ -133,6 +136,14 @@
 				D3B88B7D23C8A1AF00B24AB4 /* CategoryDistribution.swift */,
 			);
 			path = Distribution;
+			sourceTree = "<group>";
+		};
+		D3B88B8123C8B91D00B24AB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3B88B8223C8B93400B24AB4 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B88B8323C8B93400B24AB4 /* UIViewController+Extension.swift in Sources */,
 				D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */,
 				D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */,
 				D3B88B7723C899E500B24AB4 /* Simulation.swift in Sources */,

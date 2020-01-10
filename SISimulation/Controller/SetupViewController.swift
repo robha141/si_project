@@ -34,6 +34,9 @@ final class SetupViewController: UITableViewController {
         if segue.identifier == "StudentSetup",
             let controller = segue.destination as? SetupStudentsViewController {
             controller.studentSetup = studentSetup
+            controller.onSave = { [weak self] in
+                self?.studentSetup = $0
+            }
         }
     }
 

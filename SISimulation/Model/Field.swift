@@ -15,7 +15,16 @@ enum Field: Int, CaseIterable {
     case zahranicniStudenti
 
     var title: String {
-        return "TODO: - make title for field \(self)"
+        switch self {
+        case .finance:
+            return "Finance"
+        case .cestovnyRuch:
+            return "Cestovny ruch"
+        case .ekonomickaInformatika:
+            return "EI"
+        case .zahranicniStudenti:
+            return "Zahranicni studenti"
+        }
     }
 
     var categories: [Category] {

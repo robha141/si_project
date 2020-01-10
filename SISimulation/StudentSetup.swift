@@ -6,13 +6,29 @@
 //  Copyright © 2020 Robo. All rights reserved.
 //
 
+enum StudentSetupError: Error {
+    case notEnoughStudents
+    case fieldsAreNotDistributedCorrectly
+    case categoriesNotDistributedCorrectly(field: Field)
+
+    var localizedDescription: String {
+        switch self {
+        case .notEnoughStudents:
+            return "Number of students has to be > 10"
+        case .fieldsAreNotDistributedCorrectly:
+            return "Fields distribution count != 100"
+        case let .categoriesNotDistributedCorrectly(field: field):
+            return "Categories distribution count in \(field.title) != 100"
+        }
+    }
+}
+
 /// Class which holds students percetage distribution.
 final class StudentSetup {
 
     // MARK: - properties
 
     var numberOfStudents = 100
-
     var distributions: [FieldDistribution]
 
     // MARK: - init
@@ -23,7 +39,7 @@ final class StudentSetup {
                 field: $0,
                 distribution: $0.baseDistribution,
                 categoriesDistribution: $0.categories.map {
-                    CategoryDistribution(category: $0, distribution: 0)
+                    CategoryDistribution(category: $0, distribution: $0.baseDistribution)
                 }
             )
         }
@@ -32,13 +48,21 @@ final class StudentSetup {
     // MARK: - student generation
 
     func generateStudents() -> [Student] {
+
         // Generate students acoording number and distribution.
         // Round number of students up / down
-        // More logic will be added for "zahranicniStudenti",
         fatalError("Not implemented")
     }
 
     func evaluateValues() throws {
-        // If distribution is not 100, throw an error
+        guard numberOfStudents > 10 else { throw StudentSetupError.notEnoughStudents }
+        let fieldsDistributionCount = distributions.reduce(0) { $0 + $1.distribution }
+        guard fieldsDistributionCount == 100 else { throw StudentSetupError.fieldsAreNotDistributedCorrectly }
+        try distributions.forEach {
+            let categoriesDistributionCount = $0.categoriesDistribution.reduce(0, { $0 + $1.distribution })
+            if categoriesDistributionCount != 100 {
+                throw StudentSetupError.categoriesNotDistributedCorrectly(field: $0.field)
+            }
+        }
     }
 }

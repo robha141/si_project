@@ -16,6 +16,7 @@ final class DistributionSetupCell: UITableViewCell {
     private let picker = UIPickerView()
     var distribution: Int = 1 {
         didSet {
+            picker.selectRow(distribution - 1, inComponent: 0, animated: false)
             distributionField.text = "\(distribution) %"
         }
     }

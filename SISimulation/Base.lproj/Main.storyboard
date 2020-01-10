@@ -204,7 +204,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Student distribution" id="8YS-fN-onp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kwY-LU-awO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kwY-LU-awO">
+                            <connections>
+                                <action selector="saveDistribution:" destination="JqN-gJ-ix6" id="9sM-gi-cyD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="numberOfStudentsTextField" destination="Gqq-8O-xdx" id="tqa-TX-cV7"/>

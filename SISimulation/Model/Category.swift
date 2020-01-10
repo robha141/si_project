@@ -13,7 +13,12 @@ enum Category {
     case category2
 
     var title: String {
-        return "TODO: - make title for category \(self)"
+        switch self {
+        case .category1:
+            return "Category 1"
+        case .category2:
+            return "Category 2"
+        }
     }
 
     var baseDistribution: Int {
