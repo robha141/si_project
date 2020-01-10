@@ -24,6 +24,9 @@ final class SetupViewController: UITableViewController {
         SetupViewControllerItems.simulate
     ]
     private var studentSetup = StudentSetup()
+    private let switchCellId = "SwitchCell"
+    private let detailCellId = "DetailCell"
+    private let buttonCellId = "ButtonCell"
 
     // MARK: - prepareForSegue
 
@@ -37,7 +40,7 @@ final class SetupViewController: UITableViewController {
     // MARK: - simulate
 
     private func simulate() {
-
+        // TODO: - init simulation
     }
 
     // MARK: - UITableViewDelegate
@@ -63,13 +66,13 @@ final class SetupViewController: UITableViewController {
         switch items[indexPath.row] {
         case .students:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "DetailCell",
+                withIdentifier: detailCellId,
                 for: indexPath)
             cell.textLabel?.text = "Student distribution setup"
             return cell
         case let .panel(value: value):
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "SwitchCell",
+                withIdentifier: switchCellId,
                 for: indexPath) as! SwitchCell
             cell.cellSwitch.isOn = value
             cell.titleLabel.text = "Panel is on/off"
@@ -79,8 +82,9 @@ final class SetupViewController: UITableViewController {
             return cell
         case .simulate:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ButtonCell",
+                withIdentifier: buttonCellId,
                 for: indexPath) as! ButtonCell
+            cell.button.setTitle("Simulate", for: .normal)
             cell.onButtonTap = { [weak self] in
                 self?.simulate()
             }

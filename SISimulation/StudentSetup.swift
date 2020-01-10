@@ -6,8 +6,6 @@
 //  Copyright © 2020 Robo. All rights reserved.
 //
 
-typealias ItemDistribution<T> = (item: T, distribution: Double)
-
 /// Class which holds students percetage distribution.
 final class StudentSetup {
 
@@ -15,21 +13,32 @@ final class StudentSetup {
 
     var numberOfStudents = 100
 
-    var fieldsDistribution = [
-        ItemDistribution<Field>(.finance, 20.0),
-        ItemDistribution<Field>(.cestovnyRuch, 20.0),
-        ItemDistribution<Field>(.ekonomickaInformatika, 45.0),
-        ItemDistribution<Field>(.zahranicniStudenti, 15.0)
-    ]
+    var distributions: [FieldDistribution]
 
-    var categoriesDistribution = [
-        ItemDistribution<Category>(.category1, 50.0),
-        ItemDistribution<Category>(.category2, 50.0)
-    ]
+    // MARK: - init
+
+    init() {
+        distributions = Field.allCases.map {
+            FieldDistribution(
+                field: $0,
+                distribution: $0.baseDistribution,
+                categoriesDistribution: $0.categories.map {
+                    CategoryDistribution(category: $0, distribution: 0)
+                }
+            )
+        }
+    }
 
     // MARK: - student generation
 
-    func generateStudents() throws -> [Student] {
+    func generateStudents() -> [Student] {
+        // Generate students acoording number and distribution.
+        // Round number of students up / down
+        // More logic will be added for "zahranicniStudenti",
         fatalError("Not implemented")
+    }
+
+    func evaluateValues() throws {
+        // If distribution is not 100, throw an error
     }
 }

@@ -18,28 +18,67 @@ final class SetupStudentsViewController: UITableViewController {
 
     // MARK: - properties
 
-    var studentSetup: StudentSetup? {
-        didSet {
-            tableView.reloadData()
-        }
+    var studentSetup: StudentSetup?
+    var onSave: (SetupStudentsViewController) -> Void = { _ in }
+    private let distributionCellId = "DistributionCell"
+
+    // MARK: - view properties
+
+    @IBOutlet weak var numberOfStudentsTextField: UITextField!
+
+    // MARK: - lifecycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        guard let numberOfStudents = studentSetup?.numberOfStudents else { return }
+        numberOfStudentsTextField.text = "\(numberOfStudents)"
     }
+
+    // MARK: - actions
+
+    @IBAction func newNumberOfStudents(_ sender: UITextField) {
+        print("New number: \(sender.text)")
+    }
+
 
     // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return SetupStudentsViewControllerSections.allCases.count
+        return studentSetup?.distributions.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch SetupStudentsViewControllerSections(rawValue: section)! {
-        case .numberOfStudents:
-            return 1
-        case .fieldsDistribution:
-            return studentSetup?.fieldsDistribution.count ?? 0
-        case .categoriesDistribution:
-            return studentSetup?.categoriesDistribution.count ?? 0
-        }
+        return (studentSetup?.distributions[section].categoriesDistribution.count ?? 0) + 1
     }
 
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let setup = studentSetup else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: distributionCellId,
+            for: indexPath) as! DistributionSetupCell
+        switch indexPath.row {
+        case 0:
+            let item = setup.distributions[indexPath.section]
+            cell.leadingOffset.constant = 16
+            cell.titleLabel.text = item.field.title
+            cell.distribution = item.distribution
+            cell.onDistributionChange = { [weak self] in
+                self?.studentSetup?.distributions[indexPath.section].distribution = $0
+            }
+        default:
+            let item = setup
+                .distributions[indexPath.section]
+                .categoriesDistribution[indexPath.row - 1]
+            cell.leadingOffset.constant = 24
+            cell.titleLabel.text = item.category.title
+            cell.distribution = item.distribution
+            cell.onDistributionChange = { [weak self] in
+                self?.studentSetup?
+                    .distributions[indexPath.section]
+                    .categoriesDistribution[indexPath.row - 1].distribution = $0
+            }
+        }
+        return cell
+    }
 }

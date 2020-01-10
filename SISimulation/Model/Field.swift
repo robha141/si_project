@@ -19,6 +19,19 @@ enum Field: Int, CaseIterable {
     }
 
     var categories: [Category] {
-        fatalError()
+        return [.category1, .category2]
+    }
+
+    var baseDistribution: Int {
+        switch self {
+        case .finance:
+            return 20
+        case .cestovnyRuch:
+            return 20
+        case .ekonomickaInformatika:
+            return 45
+        case .zahranicniStudenti:
+            return 15
+        }
     }
 }
