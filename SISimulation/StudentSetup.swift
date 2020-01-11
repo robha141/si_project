@@ -48,10 +48,10 @@ final class StudentSetup {
     // MARK: - student generation
 
     func generateStudents() -> [Student] {
-
-        // Generate students acoording number and distribution.
-        // Round number of students up / down
-        fatalError("Not implemented")
+        return StudentFactory(
+            distributions: distributions,
+            numberOfStudents: numberOfStudents
+        ).makeStudents()
     }
 
     func evaluateValues() throws {
