@@ -10,15 +10,17 @@ struct SimulationTimer {
 
     // MARK: - properties
 
+    static var totalSeconds = 0
+    static var totalMinutes: Int {
+        return totalSeconds / 60
+    }
     private(set) var elapsedSeconds = 0
     private(set) var elapsedMinutes = 0
-    private(set) var totalSeconds = 0
 
     // MARK: - functions
 
     mutating func tick() {
         elapsedSeconds += 1
-        totalSeconds += 1
         guard elapsedSeconds % 60 == 0 else { return }
         elapsedMinutes += 1
     }

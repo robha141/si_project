@@ -6,6 +6,6 @@
 //  Copyright © 2020 Robo. All rights reserved.
 //
 
-protocol TimeDependable {
-    var timer: SimulationTimer { get }
+protocol TimeDependable: class {
+    var timer: SimulationTimer { get set }
 }

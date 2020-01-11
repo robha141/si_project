@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1699" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Simulation View Conttoller-->
         <scene sceneID="GGW-OB-KPB">
             <objects>
-                <viewController id="QSt-qT-lad" sceneMemberID="viewController">
+                <viewController id="QSt-qT-lad" customClass="SimulationViewConttoller" customModule="SISimulation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qgz-fQ-WMi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

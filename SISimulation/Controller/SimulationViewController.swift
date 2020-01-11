@@ -14,4 +14,12 @@ final class SimulationViewConttoller: UIViewController {
 
     var simulation: Simulation?
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let simulation = simulation else { fatalError("💥 Simulation should be set") }
+        simulation.simulate {
+            print("Simulation done")
+        }
+    }
+
 }

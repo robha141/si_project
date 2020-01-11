@@ -30,13 +30,8 @@ enum Category {
         }
     }
 
-    /// Time to solve problem in minutes.
+    /// Time to solve problem in minutes. Value should return predetermined value + random generated  value.
     var timeToSolve: Int {
-        return 2
-    }
-
-    /// Random time range, from which random time will be added to timeToSolve.
-    var randomTimeRangeLimitToSolve: Int {
-        return 1
+        return 2 + 1.randomLimitedValue()
     }
 }

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension Int {
+    func randomLimitedValue() -> Int {
+        return Int.random(in: -self ... self)
+    }
+}
