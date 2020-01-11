@@ -16,7 +16,6 @@
 		D3B88B6223C8835E00B24AB4 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6123C8835E00B24AB4 /* Field.swift */; };
 		D3B88B6423C8844F00B24AB4 /* StudyDepartmentEmployer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */; };
 		D3B88B6623C8846400B24AB4 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6523C8846400B24AB4 /* Student.swift */; };
-		D3B88B6C23C88C8A00B24AB4 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */; };
 		D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */; };
 		D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */; };
 		D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */; };
@@ -27,6 +26,7 @@
 		D3B88B8023C8A78900B24AB4 /* DistributionSetupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B7F23C8A78900B24AB4 /* DistributionSetupCell.swift */; };
 		D3B88B8323C8B93400B24AB4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B8223C8B93400B24AB4 /* UIViewController+Extension.swift */; };
 		D3B88B8523C9E88900B24AB4 /* StudentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B8423C9E88900B24AB4 /* StudentFactory.swift */; };
+		D3B88B8723C9EA2100B24AB4 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B8623C9EA2100B24AB4 /* SetupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,6 @@
 		D3B88B6123C8835E00B24AB4 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDepartmentEmployer.swift; sourceTree = "<group>"; };
 		D3B88B6523C8846400B24AB4 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		D3B88B6D23C88D8C00B24AB4 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		D3B88B6F23C890DE00B24AB4 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStudentsViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		D3B88B7F23C8A78900B24AB4 /* DistributionSetupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionSetupCell.swift; sourceTree = "<group>"; };
 		D3B88B8223C8B93400B24AB4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D3B88B8423C9E88900B24AB4 /* StudentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFactory.swift; sourceTree = "<group>"; };
+		D3B88B8623C9EA2100B24AB4 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		D3B88B6A23C88C7700B24AB4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D3B88B6B23C88C8A00B24AB4 /* SetupViewController.swift */,
+				D3B88B8623C9EA2100B24AB4 /* SetupViewController.swift */,
 				D3B88B7423C8976200B24AB4 /* SetupStudentsViewController.swift */,
 			);
 			path = Controller;
@@ -230,11 +230,11 @@
 				D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */,
 				D3B88B8523C9E88900B24AB4 /* StudentFactory.swift in Sources */,
 				D3B88B7923C89A7000B24AB4 /* StudentSetup.swift in Sources */,
+				D3B88B8723C9EA2100B24AB4 /* SetupViewController.swift in Sources */,
 				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,
 				D3B88B7C23C8A19E00B24AB4 /* FieldDistribution.swift in Sources */,
-				D3B88B6C23C88C8A00B24AB4 /* SetupViewController.swift in Sources */,
 				D3B88B6623C8846400B24AB4 /* Student.swift in Sources */,
 				D3B88B6023C8830100B24AB4 /* Category.swift in Sources */,
 			);

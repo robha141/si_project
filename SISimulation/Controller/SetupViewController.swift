@@ -14,7 +14,7 @@ private enum SetupViewControllerItems {
     case simulate
 }
 
-final class SetupViewController: UITableViewController {
+final class SetupSimulationViewController: UITableViewController {
 
     // MARK: - properties
 
@@ -43,7 +43,8 @@ final class SetupViewController: UITableViewController {
     // MARK: - simulate
 
     private func simulate() {
-        // TODO: - init simulation
+        let students = studentSetup.generateStudents()
+        print("Number of students: \(students.count)")
     }
 
     // MARK: - UITableViewDelegate

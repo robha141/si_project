@@ -16,13 +16,14 @@ struct StudentFactory {
     }
 
     private func numberOfStudentsForField(field: FieldDistribution) -> Int {
-        return numberOfStudents * (field.distribution / 100)
+        return Int(Double(numberOfStudents) * Double(Double(field.distribution) / 100))
     }
 
     private func studentsAccordingField(numberOfStudentsInField: Int,
-                                fieldDistribution: FieldDistribution) -> [Student] {
+                                        fieldDistribution: FieldDistribution) -> [Student] {
+        print(numberOfStudentsInField)
         return fieldDistribution.categoriesDistribution
-            .map { (numberOfStudentsInField * ($0.distribution / 100), $0.category) }
+            .map { (Int(Double(numberOfStudentsInField) * (Double($0.distribution) / 100)), $0.category) }
             .flatMap { createStudents(numberOfStudents: $0.0, category: $0.1, field: fieldDistribution.field) }
     }
 
