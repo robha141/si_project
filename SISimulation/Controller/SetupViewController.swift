@@ -24,6 +24,7 @@ final class SetupSimulationViewController: UITableViewController {
         SetupViewControllerItems.simulate
     ]
     private var studentSetup = StudentSetup()
+    private var simulation: Simulation?
     private let switchCellId = "SwitchCell"
     private let detailCellId = "DetailCell"
     private let buttonCellId = "ButtonCell"
@@ -31,20 +32,28 @@ final class SetupSimulationViewController: UITableViewController {
     // MARK: - prepareForSegue
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "StudentSetup",
-            let controller = segue.destination as? SetupStudentsViewController {
+        switch segue.identifier {
+        case "StudentSetup":
+            guard let controller = segue.destination as? SetupStudentsViewController else { return }
             controller.studentSetup = studentSetup
             controller.onSave = { [weak self] in
                 self?.studentSetup = $0
             }
+        case "Simulation":
+            guard let controller = segue.destination as? SimulationViewConttoller else { return }
+            controller.simulation = simulation
+        default:
+            break
         }
     }
 
     // MARK: - simulate
 
     private func simulate() {
+        guard case let .panel(value) = items[1] else { return }
         let students = studentSetup.generateStudents()
-        print("Number of students: \(students.count)")
+        simulation = Simulation(students: students, panelInUse: value)
+        performSegue(withIdentifier: "Simulation", sender: self)
     }
 
     // MARK: - UITableViewDelegate

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,11 +103,28 @@
                     <navigationItem key="navigationItem" title="Setup simulation" id="I2y-Lt-xHt"/>
                     <connections>
                         <segue destination="JqN-gJ-ix6" kind="show" identifier="StudentSetup" id="nIE-ee-pPW"/>
+                        <segue destination="QSt-qT-lad" kind="show" identifier="Simulation" id="hEq-NY-shb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bp-Tr-hhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1699" y="131"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GGW-OB-KPB">
+            <objects>
+                <viewController id="QSt-qT-lad" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qgz-fQ-WMi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0Xq-ir-gmQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TJY-B5-ASn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJb-ia-HzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865" y="710"/>
         </scene>
         <!--Student distribution-->
         <scene sceneID="br4-gf-vVl">
