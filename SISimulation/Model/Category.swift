@@ -29,4 +29,14 @@ enum Category {
             return 50
         }
     }
+
+    /// Time to solve problem in minutes.
+    var timeToSolve: Int {
+        return 2
+    }
+
+    /// Random time range, from which random time will be added to timeToSolve.
+    var randomTimeRangeLimitToSolve: Int {
+        return 1
+    }
 }

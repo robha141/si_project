@@ -12,9 +12,10 @@ final class Student: TimeDependable {
 
     let studyField: Field
     let problem: Category
-
-    // MARK: - TimeDependable
-
+    /// Time to solve student's problem in minutes. Some random value will be added according problem category.
+    let timeToSolveProblem: Int
+    /// Total waiting time in minutes
+    private(set) var totalWaitingTime: Double?
     var timer = SimulationTimer()
 
     // MARK: - init
@@ -22,5 +23,10 @@ final class Student: TimeDependable {
     init(studyField: Field, problem: Category) {
         self.studyField = studyField
         self.problem = problem
+    }
+
+    /// Function should be called, if rector starts solve problem with student.
+    func startSolvingProblem() {
+        totalWaitingTime = Double(timer.elapsedSeconds) / 60
     }
 }
