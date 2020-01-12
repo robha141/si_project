@@ -6,17 +6,4 @@
 //  Copyright © 2020 Robo. All rights reserved.
 //
 
-import Foundation
-
-final class WaitingQueue: Queue<Student>,
-    TimeDependable,
-    StudentQueue {
-
-    var timer = SimulationTimer() {
-        didSet { moveQueue() }
-    }
-
-    private func moveQueue() {
-        
-    }
-}
+final class WaitingQueue: Queue<Student>, StudentQueue {}

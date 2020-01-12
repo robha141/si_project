@@ -9,3 +9,9 @@
 protocol TimeDependable: class {
     var timer: SimulationTimer { get set }
 }
+
+extension Array where Element: TimeDependable {
+    func updateTime() {
+        forEach { $0.timer.tick() }
+    }
+}

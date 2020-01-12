@@ -20,7 +20,7 @@ enum StudentMistake: Int {
 enum CrowdedPerception: Int {
     case seven
     case eight
-    case nein
+    case nine
 
     var numberOfPeople: Int {
         switch self {
@@ -28,7 +28,7 @@ enum CrowdedPerception: Int {
             return 7
         case .eight:
             return 8
-        case .nein:
+        case .nine:
             return 9
         }
     }

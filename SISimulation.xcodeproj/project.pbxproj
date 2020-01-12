@@ -11,6 +11,7 @@
 		D3251F6123CB009400DF2E2A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6023CB009300DF2E2A /* Array+Extension.swift */; };
 		D3251F6323CB624C00DF2E2A /* WaitingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */; };
 		D3251F6523CB62DF00DF2E2A /* StudentQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */; };
+		D3251F6723CB651000DF2E2A /* EntireQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6623CB651000DF2E2A /* EntireQueue.swift */; };
 		D365FCB523C881240012F35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB423C881240012F35E /* AppDelegate.swift */; };
 		D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB623C881240012F35E /* SceneDelegate.swift */; };
 		D365FCBC23C881240012F35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBA23C881240012F35E /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		D3251F6023CB009300DF2E2A /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingQueue.swift; sourceTree = "<group>"; };
 		D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQueue.swift; sourceTree = "<group>"; };
+		D3251F6623CB651000DF2E2A /* EntireQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntireQueue.swift; sourceTree = "<group>"; };
 		D365FCB123C881240012F35E /* SISimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D365FCB423C881240012F35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D365FCB623C881240012F35E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				D3B88B9323CA132700B24AB4 /* FieldQueue.swift */,
 				D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */,
 				D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */,
+				D3251F6623CB651000DF2E2A /* EntireQueue.swift */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				D3251F5F23CA1E6900DF2E2A /* Int+Extension.swift in Sources */,
 				D3B88B8D23CA0E0600B24AB4 /* Queue.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,
+				D3251F6723CB651000DF2E2A /* EntireQueue.swift in Sources */,
 				D3B88B7C23C8A19E00B24AB4 /* FieldDistribution.swift in Sources */,
 				D3B88B6623C8846400B24AB4 /* Student.swift in Sources */,
 				D3B88B6023C8830100B24AB4 /* Category.swift in Sources */,

@@ -12,8 +12,7 @@ final class Simulation {
 
     // MARK: - properties
 
-    private var outsideQueue = WaitingQueue()
-    private var queues = [FieldQueue]()
+    private var queue = EntireQueue()
     private var students: [Student]
 
     private let usePanel: Bool
@@ -23,7 +22,6 @@ final class Simulation {
     /// Duration of simulation in minutes
     private let duration = 60
 
-
     // MARK: - init
 
     /// Duration is in minutes, default is 60
@@ -32,14 +30,6 @@ final class Simulation {
          duration: Int = 60) {
         self.students = students
         self.usePanel = panelInUse
-        self.queues = Field.allCases.map {
-            FieldQueue(
-                field: $0,
-                onWrongStudentReceive: { [unowned self] in
-                    $0.goToCorrectQueue(in: self.queues)
-                }
-            )
-        }
     }
 
     /// Sort students to queue according panel condition.
@@ -55,7 +45,6 @@ final class Simulation {
             while self.shouldSimulate {
                 SimulationTimer.totalSeconds += 1
                 self.updateTimeDependables()
-                self.updateWaitingQueue()
                 self.generateAnotherStudentToQueue()
                 self.controlIfStudentsShouldBeGenerated()
                 self.controlIfSimulationShouldEnd()
@@ -74,17 +63,8 @@ final class Simulation {
 
     /// Tick on every time dependable object.
     private func updateTimeDependables() {
-        [students, queues]
-            .compactMap { return $0 as? TimeDependable }
-            .forEach { $0.timer.tick() }
-    }
-
-    /// Control, if top student can enter his queue.
-    private func updateWaitingQueue() {
-        guard let student = outsideQueue.topElement else { return }
-        let fieldQueue = queues.getQueue(according: student.goingToField)
-        guard !fieldQueue.isFull else { return }
-        let student = outsideQueue.popFirst()
+        queue.update()
+        students.updateTime()
     }
 
     // MARK: - Simulation end condition
