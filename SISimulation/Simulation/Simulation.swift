@@ -53,7 +53,6 @@ final class Simulation {
     func simulate(onComplete: @escaping () -> Void) {
         DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
             while self.shouldSimulate {
-                print("Total minutes: \(SimulationTimer.totalMinutes)")
                 SimulationTimer.totalSeconds += 1
                 self.updateTimeDependables()
                 self.generateAnotherStudentToQueue()
@@ -83,9 +82,6 @@ final class Simulation {
 
     private func controlIfStudentsShouldBeGenerated() {
         shouldGenerateStudents = SimulationTimer.totalMinutes < duration
-        if (SimulationTimer.totalMinutes > duration) {
-            students.forEach { $0.problemWasSolved() }
-        }
     }
 
     private func controlIfSimulationShouldEnd() {

@@ -24,15 +24,24 @@ final class SetupStudentsViewController: UITableViewController {
 
     // MARK: - view properties
 
+    @IBOutlet weak var arriveSanceTextField: UITextField!
+    @IBOutlet weak var studentFieldMistakeTextField: UITextField!
     @IBOutlet weak var numberOfStudentsTextField: UITextField!
 
     // MARK: - lifecycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        guard let numberOfStudents = studentSetup?.numberOfStudents else { return }
-        numberOfStudentsTextField.text = "\(numberOfStudents)"
+        guard let setup = studentSetup else { fatalError("💥 StudentSetup should be injected at this point") }
+        numberOfStudentsTextField.text = "\(setup.numberOfStudents)"
+        studentFieldMistakeTextField.text = "\(setup.mistakeSance)"
+        arriveSanceTextField.text = "\(setup.arriveSance)"
     }
 
     // MARK: - actions
@@ -48,14 +57,40 @@ final class SetupStudentsViewController: UITableViewController {
                 title: "Items are not distributed properly",
                 message: error.localizedDescription)
         } catch {
-            makeAlert(
-                title: "Items are not distributed properly",
-                message: error.localizedDescription)
+            print("Error occured: \(error)")
         }
     }
     
     @IBAction func newNumberOfStudents(_ sender: UITextField) {
         studentSetup?.numberOfStudents = Int(sender.text ?? "0") ?? 0
+    }
+
+    @IBAction func errorFieldChanged(_ sender: UITextField) {
+        guard let setup = studentSetup else { return }
+        do {
+            let value = try setup.evaluatePercentage(from: sender.text)
+            setup.mistakeSance = value
+        } catch let error as StudentSetupError {
+            makeAlert(
+                title: "Error while changing error field",
+                message: error.localizedDescription)
+        } catch {
+            print("Error occured: \(error)")
+        }
+    }
+
+    @IBAction func arriveFieldChanged(_ sender: UITextField) {
+        guard let setup = studentSetup else { return }
+        do {
+            let value = try setup.evaluatePercentage(from: sender.text)
+            setup.arriveSance = value
+        } catch let error as StudentSetupError {
+            makeAlert(
+                title: "Error while changing arive field",
+                message: error.localizedDescription)
+        } catch {
+            print("Error occured: \(error)")
+        }
     }
 
 

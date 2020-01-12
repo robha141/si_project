@@ -6,11 +6,16 @@
 //  Copyright © 2020 Robo. All rights reserved.
 //
 
+private enum FieldQueueState {
+    case emptyRoom
+    case studentInRoom(student: Student)
+}
+
 final class FieldQueue: Queue<Student>,
     TimeDependable {
 
     let field: Field
-    private var student: Student?
+    private var state: FieldQueueState = .emptyRoom
     private let onWrongStudentReceive: (Student) -> Void
 
     // MARK: - TimeDependable
@@ -28,7 +33,26 @@ final class FieldQueue: Queue<Student>,
     }
 
     func update() {
+        switch state {
+        case .emptyRoom:
+            acceptStudent()
+        case let .studentInRoom(student: student):
+            solveStudentProblem(student: student)
+        }
+    }
 
+    private func acceptStudent() {
+        guard let student = popFirst() else { return state = .emptyRoom }
+        guard student.studyField == field else { return onWrongStudentReceive(student) }
+        timer.resetElapsed()
+        student.startSolvingProblem()
+        state = .studentInRoom(student: student)
+    }
+
+    private func solveStudentProblem(student: Student) {
+        guard student.timeToSolveProblem >= timer.elapsedMinutes else { return }
+        student.problemWasSolved()
+        state = .emptyRoom
     }
 
     // MARK: - student handling

@@ -10,6 +10,7 @@ enum StudentSetupError: Error {
     case notEnoughStudents
     case fieldsAreNotDistributedCorrectly
     case categoriesNotDistributedCorrectly(field: Field)
+    case wrongPercetage
 
     var localizedDescription: String {
         switch self {
@@ -19,6 +20,8 @@ enum StudentSetupError: Error {
             return "Fields distribution count != 100"
         case let .categoriesNotDistributedCorrectly(field: field):
             return "Categories distribution count in \(field.title) != 100"
+        case .wrongPercetage:
+            return "Wrong student percentage (should be int between 0 ... 100)"
         }
     }
 }
@@ -29,6 +32,8 @@ final class StudentSetup {
     // MARK: - properties
 
     var numberOfStudents = 100
+    var mistakeSance: Double = 5
+    var arriveSance: Double = 1
     var distributions: [FieldDistribution]
 
     // MARK: - init
@@ -54,6 +59,8 @@ final class StudentSetup {
         ).makeStudents()
     }
 
+    // MARK: - evaluating values
+
     func evaluateValues() throws {
         guard numberOfStudents > 10 else { throw StudentSetupError.notEnoughStudents }
         let fieldsDistributionCount = distributions.reduce(0) { $0 + $1.distribution }
@@ -64,5 +71,11 @@ final class StudentSetup {
                 throw StudentSetupError.categoriesNotDistributedCorrectly(field: $0.field)
             }
         }
+    }
+
+    func evaluatePercentage(from text: String?) throws -> Double {
+        guard let number = Double(text ?? "0.0"),
+            0...100 ~= number else { throw StudentSetupError.wrongPercetage }
+        return number
     }
 }

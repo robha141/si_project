@@ -46,7 +46,7 @@ final class Student: TimeDependable {
     /// Randomly assigns student to queue, when his time is up.
     func goToQueue(outsideQueue: Queue<Student>,
                    queues: FieldQueue) {
-
+        
     }
 
     /// When student is in wrong queue, it will be send to correct one (according studyField).
