@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,28 +102,12 @@
                     <navigationItem key="navigationItem" title="Setup simulation" id="I2y-Lt-xHt"/>
                     <connections>
                         <segue destination="JqN-gJ-ix6" kind="show" identifier="StudentSetup" id="nIE-ee-pPW"/>
-                        <segue destination="QSt-qT-lad" kind="show" identifier="Simulation" id="hEq-NY-shb"/>
+                        <segue destination="9Wv-Qn-cx4" kind="show" identifier="Simulation" id="5SA-LZ-xc2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bp-Tr-hhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1699" y="131"/>
-        </scene>
-        <!--Simulation View Conttoller-->
-        <scene sceneID="GGW-OB-KPB">
-            <objects>
-                <viewController id="QSt-qT-lad" customClass="SimulationViewConttoller" customModule="SISimulation" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qgz-fQ-WMi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0Xq-ir-gmQ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="TJY-B5-ASn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GJb-ia-HzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2865" y="710"/>
         </scene>
         <!--Student distribution-->
         <scene sceneID="br4-gf-vVl">
@@ -288,6 +271,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zta-gE-z2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2901.449275362319" y="-25.446428571428569"/>
+        </scene>
+        <!--Simulation-->
+        <scene sceneID="q8h-Vi-Nna">
+            <objects>
+                <tableViewController id="9Wv-Qn-cx4" customClass="SimulationViewConttoller" customModule="SISimulation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BWc-7a-3P6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="OjT-ZX-3UJ" detailTextLabel="dsU-Hb-wty" style="IBUITableViewCellStyleValue1" id="e9N-sc-yK3">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e9N-sc-yK3" id="L8v-eN-ITz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OjT-ZX-3UJ">
+                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsU-Hb-wty">
+                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Wv-Qn-cx4" id="0KU-EC-t1N"/>
+                            <outlet property="delegate" destination="9Wv-Qn-cx4" id="J1g-SY-bJa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Simulation" id="hne-Xl-kML"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgv-9i-le0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2901" y="683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bIt-XJ-lq5">

@@ -57,7 +57,6 @@ final class Simulation {
             }
             DispatchQueue.main.async {
                 onComplete()
-                self.logValues()
             }
         }
     }
@@ -88,15 +87,21 @@ final class Simulation {
         shouldSimulate = doneStudents.count != students.count
     }
 
-    func logValues() {
+    // MARK: - get result
+
+    func makeResultItems() -> [SimulationResultItem] {
         let numberOfStudents = students.count
         let waitingTimes = students.compactMap { $0.totalWaitingTime }
         let totalWaitingTime = waitingTimes
             .reduce(0, +)
-        print("Number of students: \(numberOfStudents)")
-        print("Waiting time: \(totalWaitingTime)")
-        print("Average wating time: \(totalWaitingTime / Double(numberOfStudents))")
-        print("Higest waiting time: \(waitingTimes.max())")
-        print("Lowest wating time: \(waitingTimes.min())")
+        let averageWaitingTime = totalWaitingTime / Double(numberOfStudents)
+        let highestWaitingTime = waitingTimes.max() ?? -1.0
+        let lowestWaitingTime = waitingTimes.min() ?? -1.0
+        return [
+            SimulationResultItem(name: "Number of students", value: "\(numberOfStudents)"),
+            SimulationResultItem(name: "Average wating time (min)", value: "\(averageWaitingTime)"),
+            SimulationResultItem(name: "Higest waiting time (min)", value: "\(highestWaitingTime)"),
+            SimulationResultItem(name: "Lowest wating time (min)", value: "\(lowestWaitingTime)")
+        ]
     }
 }

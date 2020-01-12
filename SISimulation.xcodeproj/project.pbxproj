@@ -40,6 +40,7 @@
 		D3B88B8F23CA101400B24AB4 /* SimulationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */; };
 		D3B88B9123CA128100B24AB4 /* TimeDependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B9023CA128100B24AB4 /* TimeDependable.swift */; };
 		D3B88B9423CA132700B24AB4 /* FieldQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B9323CA132700B24AB4 /* FieldQueue.swift */; };
+		D3FE96D823CB946300E4DF5D /* SimulationResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FE96D723CB946300E4DF5D /* SimulationResultItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationTimer.swift; sourceTree = "<group>"; };
 		D3B88B9023CA128100B24AB4 /* TimeDependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDependable.swift; sourceTree = "<group>"; };
 		D3B88B9323CA132700B24AB4 /* FieldQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldQueue.swift; sourceTree = "<group>"; };
+		D3FE96D723CB946300E4DF5D /* SimulationResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationResultItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				D3B88B5F23C8830100B24AB4 /* Category.swift */,
 				D3B88B6123C8835E00B24AB4 /* Field.swift */,
 				D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */,
+				D3FE96D723CB946300E4DF5D /* SimulationResultItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B88B9123CA128100B24AB4 /* TimeDependable.swift in Sources */,
+				D3FE96D823CB946300E4DF5D /* SimulationResultItem.swift in Sources */,
 				D3251F6523CB62DF00DF2E2A /* StudentQueue.swift in Sources */,
 				D3251F6323CB624C00DF2E2A /* WaitingQueue.swift in Sources */,
 				D3B88B8323C8B93400B24AB4 /* UIViewController+Extension.swift in Sources */,
