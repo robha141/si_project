@@ -28,6 +28,7 @@ final class Simulation {
     private let usePanel: Bool
     private var shouldSimulate = true
     private var shouldGenerateStudents = true
+    private let panel = Panel()
 
     /// Duration of simulation in minutes
     private let duration = 60
@@ -48,6 +49,9 @@ final class Simulation {
     /// Simulation loop is performed on background thred (qos userInteractive).
     func simulate(onComplete: @escaping () -> Void) {
         DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+            if self.usePanel {
+                self.students.forEach { self.panel.calculateWaitingTime(for: $0) }
+            }
             while self.shouldSimulate {
                 SimulationTimer.totalSeconds += 1
                 self.updateTimeDependables()

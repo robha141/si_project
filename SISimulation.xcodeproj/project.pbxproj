@@ -41,6 +41,7 @@
 		D3B88B9123CA128100B24AB4 /* TimeDependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B9023CA128100B24AB4 /* TimeDependable.swift */; };
 		D3B88B9423CA132700B24AB4 /* FieldQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B88B9323CA132700B24AB4 /* FieldQueue.swift */; };
 		D3FE96D823CB946300E4DF5D /* SimulationResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FE96D723CB946300E4DF5D /* SimulationResultItem.swift */; };
+		D3FE96DA23CB97CC00E4DF5D /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FE96D923CB97CC00E4DF5D /* Panel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		D3B88B9023CA128100B24AB4 /* TimeDependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDependable.swift; sourceTree = "<group>"; };
 		D3B88B9323CA132700B24AB4 /* FieldQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldQueue.swift; sourceTree = "<group>"; };
 		D3FE96D723CB946300E4DF5D /* SimulationResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationResultItem.swift; sourceTree = "<group>"; };
+		D3FE96D923CB97CC00E4DF5D /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				D3B88B7623C899E500B24AB4 /* Simulation.swift */,
 				D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */,
 				D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */,
+				D3FE96D923CB97CC00E4DF5D /* Panel.swift */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				D3251F6123CB009400DF2E2A /* Array+Extension.swift in Sources */,
 				D3251F6F23CB6B5B00DF2E2A /* StudentState.swift in Sources */,
 				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
+				D3FE96DA23CB97CC00E4DF5D /* Panel.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D3251F5F23CA1E6900DF2E2A /* Int+Extension.swift in Sources */,
 				D3B88B8D23CA0E0600B24AB4 /* Queue.swift in Sources */,
