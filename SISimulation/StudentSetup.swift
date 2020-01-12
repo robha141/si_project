@@ -55,7 +55,8 @@ final class StudentSetup {
     func generateStudents() -> [Student] {
         return StudentFactory(
             distributions: distributions,
-            numberOfStudents: numberOfStudents
+            numberOfStudents: numberOfStudents,
+            mistakeSance: mistakeSance
         ).makeStudents()
     }
 

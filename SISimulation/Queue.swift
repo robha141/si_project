@@ -11,6 +11,15 @@ class Queue<T> {
     // MARK: - properties
 
     private var elements = [T]()
+    var topElement: T? {
+        return elements.first
+    }
+    var numberOfElemets: Int {
+        return elements.count
+    }
+    var isEmpty: Bool {
+        return elements.isEmpty
+    }
 
     // MARK: - functions
 

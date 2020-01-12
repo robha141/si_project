@@ -12,7 +12,8 @@ private enum FieldQueueState {
 }
 
 final class FieldQueue: Queue<Student>,
-    TimeDependable {
+    TimeDependable,
+    StudentQueue {
 
     let field: Field
     private var state: FieldQueueState = .emptyRoom
@@ -32,7 +33,7 @@ final class FieldQueue: Queue<Student>,
         self.onWrongStudentReceive = onWrongStudentReceive
     }
 
-    func update() {
+    private func update() {
         switch state {
         case .emptyRoom:
             acceptStudent()
@@ -54,10 +55,21 @@ final class FieldQueue: Queue<Student>,
         student.problemWasSolved()
         state = .emptyRoom
     }
+}
 
-    // MARK: - student handling
+extension Array where Element == FieldQueue {
+    func getQueue(according: Field) -> FieldQueue {
+        guard let queue = first(where: { $0.field == according }) else {
+            fatalError("💥 All Queues should be inside array")
+        }
+        return queue
+    }
 
-    func addStudentToWaitingQueue(student: Student) {
-        insert(element: student)
+    func getRandomQueue(except: Field) -> FieldQueue {
+        let filtered = filter { $0.field != except }
+        guard let queue = filtered.randomElement() else {
+            fatalError("💥 Filtered array should never be empty")
+        }
+        return queue
     }
 }

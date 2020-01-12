@@ -12,7 +12,7 @@ final class Simulation {
 
     // MARK: - properties
 
-    private var outsideQueue = Queue<Student>()
+    private var outsideQueue = WaitingQueue()
     private var queues = [FieldQueue]()
     private var students: [Student]
 
@@ -55,6 +55,7 @@ final class Simulation {
             while self.shouldSimulate {
                 SimulationTimer.totalSeconds += 1
                 self.updateTimeDependables()
+                self.updateWaitingQueue()
                 self.generateAnotherStudentToQueue()
                 self.controlIfStudentsShouldBeGenerated()
                 self.controlIfSimulationShouldEnd()
@@ -76,6 +77,14 @@ final class Simulation {
         [students, queues]
             .compactMap { return $0 as? TimeDependable }
             .forEach { $0.timer.tick() }
+    }
+
+    /// Control, if top student can enter his queue.
+    private func updateWaitingQueue() {
+        guard let student = outsideQueue.topElement else { return }
+        let fieldQueue = queues.getQueue(according: student.goingToField)
+        guard !fieldQueue.isFull else { return }
+        let student = outsideQueue.popFirst()
     }
 
     // MARK: - Simulation end condition

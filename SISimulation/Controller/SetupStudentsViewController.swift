@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum SetupStudentsViewControllerSections: Int, CaseIterable {
-    case numberOfStudents
-    case fieldsDistribution
-    case categoriesDistribution
-}
-
 final class SetupStudentsViewController: UITableViewController {
 
     // MARK: - properties
@@ -29,11 +23,6 @@ final class SetupStudentsViewController: UITableViewController {
     @IBOutlet weak var numberOfStudentsTextField: UITextField!
 
     // MARK: - lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

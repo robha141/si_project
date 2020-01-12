@@ -9,6 +9,7 @@
 struct StudentFactory {
     let distributions: [FieldDistribution]
     let numberOfStudents: Int
+    let mistakeSance: Double
 
     func makeStudents() -> [Student] {
         return distributions.map { (numberOfStudentsForField(field: $0), $0) }
@@ -29,6 +30,12 @@ struct StudentFactory {
     private func createStudents(numberOfStudents: Int,
                         category: Category,
                         field: Field) -> [Student] {
-        return (0 ..< numberOfStudents).map { _ in Student(studyField: field, problem: category) }
+        return (0 ..< numberOfStudents).map { _ in
+            Student(
+                studyField: field,
+                problem: category,
+                mistakeSance: mistakeSance
+            )
+        }
     }
 }
