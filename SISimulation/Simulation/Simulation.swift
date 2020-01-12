@@ -39,6 +39,7 @@ final class Simulation {
          panelInUse: Bool,
          duration: Int = 60) {
         self.students = students
+        self.students.shuffle()
         self.usePanel = panelInUse
     }
 
@@ -56,6 +57,7 @@ final class Simulation {
             }
             DispatchQueue.main.async {
                 onComplete()
+                self.logValues()
             }
         }
     }
@@ -83,10 +85,18 @@ final class Simulation {
     }
 
     private func controlIfSimulationShouldEnd() {
-        print("Done: \(doneStudents.count)")
-        print("Waiting: \(waitingStudents.count)")
-        print("WaitingInQueue: \(waitingInQueueStudents.count)")
-        print("Students: \(students.count)")
         shouldSimulate = doneStudents.count != students.count
+    }
+
+    func logValues() {
+        let numberOfStudents = students.count
+        let waitingTimes = students.compactMap { $0.totalWaitingTime }
+        let totalWaitingTime = waitingTimes
+            .reduce(0, +)
+        print("Number of students: \(numberOfStudents)")
+        print("Waiting time: \(totalWaitingTime)")
+        print("Average wating time: \(totalWaitingTime / Double(numberOfStudents))")
+        print("Higest waiting time: \(waitingTimes.max())")
+        print("Lowest wating time: \(waitingTimes.min())")
     }
 }

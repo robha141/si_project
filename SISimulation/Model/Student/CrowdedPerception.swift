@@ -23,7 +23,7 @@ enum CrowdedPerception: Int {
     }
 
     func isQueueFull(queue: FieldQueue) -> Bool {
-        return queue.numberOfElemets > rawValue
+        return queue.numberOfElemets > numberOfPeople
     }
 
     /// Every student has his own perception of how crowded is inside, we can determine if he will move from outside queue or not.

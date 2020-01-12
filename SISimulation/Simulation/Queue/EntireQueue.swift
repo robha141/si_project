@@ -33,8 +33,6 @@ final class EntireQueue {
     func update() {
         updateWaitingQueue()
         queues.updateTime()
-//        print("Queue outside count: \(outsideQueue.numberOfElemets)")
-//        queues.forEach { print("Queue inside: \($0.field), number of students: \($0.numberOfElemets)") }
     }
 
     func studentCame(student: Student) {

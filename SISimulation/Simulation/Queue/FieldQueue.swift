@@ -43,15 +43,16 @@ final class FieldQueue: Queue<Student>,
     }
 
     private func acceptStudent() {
+        guard case .emptyRoom = state else { return }
         guard let student = popFirst() else { return state = .emptyRoom }
         guard student.studyField == field else { return onWrongStudentReceive(student) }
+        state = .studentInRoom(student: student)
         timer.resetElapsed()
         student.startSolvingProblem()
-        state = .studentInRoom(student: student)
     }
 
     private func solveStudentProblem(student: Student) {
-        guard student.timeToSolveProblem >= timer.elapsedMinutes else { return }
+        guard timer.elapsedMinutes >= student.timeToSolveProblem  else { return }
         student.problemWasSolved()
         state = .emptyRoom
     }
