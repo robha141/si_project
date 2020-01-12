@@ -91,13 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D3251F6823CB6ADA00DF2E2A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		D3251F6923CB6AE400DF2E2A /* Student */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +100,16 @@
 				D3251F6E23CB6B5B00DF2E2A /* StudentState.swift */,
 			);
 			path = Student;
+			sourceTree = "<group>";
+		};
+		D3251F7023CB6D6C00DF2E2A /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */,
+				D3B88B9323CA132700B24AB4 /* FieldQueue.swift */,
+				D3251F6623CB651000DF2E2A /* EntireQueue.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 		D365FCA823C881240012F35E = {
@@ -200,14 +203,11 @@
 		D3B88B9223CA130300B24AB4 /* Simulation */ = {
 			isa = PBXGroup;
 			children = (
-				D3251F6823CB6ADA00DF2E2A /* New Group */,
+				D3251F7023CB6D6C00DF2E2A /* Queue */,
 				D3B88B9023CA128100B24AB4 /* TimeDependable.swift */,
 				D3B88B7623C899E500B24AB4 /* Simulation.swift */,
 				D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */,
-				D3B88B9323CA132700B24AB4 /* FieldQueue.swift */,
-				D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */,
 				D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */,
-				D3251F6623CB651000DF2E2A /* EntireQueue.swift */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";

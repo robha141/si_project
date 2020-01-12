@@ -42,11 +42,6 @@ final class Simulation {
         self.usePanel = panelInUse
     }
 
-    /// Sort students to queue according panel condition.
-    private func initialQueueSetup() {
-
-    }
-
     // MARK: - loop
 
     /// Simulation loop is performed on background thred (qos userInteractive).
@@ -74,7 +69,11 @@ final class Simulation {
     /// Tick on every time dependable object.
     private func updateTimeDependables() {
         queue.update()
-        students.updateTime()
+        students.updateTime {
+            if $0.state == .waiting, $0.timeToGoToQueue <= SimulationTimer.totalMinutes {
+                queue.studentCame(student: $0)
+            }
+        }
     }
 
     // MARK: - Simulation end condition
@@ -84,6 +83,10 @@ final class Simulation {
     }
 
     private func controlIfSimulationShouldEnd() {
+        print("Done: \(doneStudents.count)")
+        print("Waiting: \(waitingStudents.count)")
+        print("WaitingInQueue: \(waitingInQueueStudents.count)")
+        print("Students: \(students.count)")
         shouldSimulate = doneStudents.count != students.count
     }
 }

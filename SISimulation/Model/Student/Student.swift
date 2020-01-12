@@ -10,6 +10,8 @@ final class Student: TimeDependable {
 
     // MARK: - properties
 
+    /// Time, when student will enter queue, in minutes. Default is 0, which means, student will enter queue immediatelly.
+    var timeToGoToQueue = 0
     /// Real field, which is student studying.
     let studyField: Field
     /// Field, to which is student going.

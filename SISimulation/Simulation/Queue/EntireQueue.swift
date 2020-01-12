@@ -33,6 +33,8 @@ final class EntireQueue {
     func update() {
         updateWaitingQueue()
         queues.updateTime()
+//        print("Queue outside count: \(outsideQueue.numberOfElemets)")
+//        queues.forEach { print("Queue inside: \($0.field), number of students: \($0.numberOfElemets)") }
     }
 
     func studentCame(student: Student) {
@@ -41,7 +43,9 @@ final class EntireQueue {
             return outsideQueue.addStudentToQueue(student: student)
         }
         let queue = queues.getQueue(according: student.goingToField)
-        guard !student.crowdedPerception.isQueueFull(queue: queue) else { return }
+        guard !student.crowdedPerception.isQueueFull(queue: queue) else {
+            return outsideQueue.addStudentToQueue(student: student)
+        }
         queue.addStudentToQueue(student: student)
     }
 

@@ -11,7 +11,11 @@ protocol TimeDependable: class {
 }
 
 extension Array where Element: TimeDependable {
-    func updateTime() {
-        forEach { $0.timer.tick() }
+    /// Updates time for each element. Aditionaly, we can make custom changes to element inside closure.
+    func updateTime(update: (Element) -> Void = { _ in }) {
+        forEach {
+            $0.timer.tick()
+            update($0)
+        }
     }
 }
