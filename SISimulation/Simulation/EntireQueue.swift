@@ -35,6 +35,16 @@ final class EntireQueue {
         queues.updateTime()
     }
 
+    func studentCame(student: Student) {
+        student.startStandingInQueue()
+        guard outsideQueue.isEmpty else {
+            return outsideQueue.addStudentToQueue(student: student)
+        }
+        let queue = queues.getQueue(according: student.goingToField)
+        guard !student.crowdedPerception.isQueueFull(queue: queue) else { return }
+        queue.addStudentToQueue(student: student)
+    }
+
     private func updateWaitingQueue() {
         guard let firstStudent = outsideQueue.topElement else { return }
         let queue = queues.getQueue(according: firstStudent.goingToField)

@@ -12,6 +12,9 @@
 		D3251F6323CB624C00DF2E2A /* WaitingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */; };
 		D3251F6523CB62DF00DF2E2A /* StudentQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */; };
 		D3251F6723CB651000DF2E2A /* EntireQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6623CB651000DF2E2A /* EntireQueue.swift */; };
+		D3251F6B23CB6AF200DF2E2A /* CrowdedPerception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6A23CB6AF200DF2E2A /* CrowdedPerception.swift */; };
+		D3251F6D23CB6B0B00DF2E2A /* StudentMistake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6C23CB6B0B00DF2E2A /* StudentMistake.swift */; };
+		D3251F6F23CB6B5B00DF2E2A /* StudentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6E23CB6B5B00DF2E2A /* StudentState.swift */; };
 		D365FCB523C881240012F35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB423C881240012F35E /* AppDelegate.swift */; };
 		D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365FCB623C881240012F35E /* SceneDelegate.swift */; };
 		D365FCBC23C881240012F35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D365FCBA23C881240012F35E /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 		D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingQueue.swift; sourceTree = "<group>"; };
 		D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQueue.swift; sourceTree = "<group>"; };
 		D3251F6623CB651000DF2E2A /* EntireQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntireQueue.swift; sourceTree = "<group>"; };
+		D3251F6A23CB6AF200DF2E2A /* CrowdedPerception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdedPerception.swift; sourceTree = "<group>"; };
+		D3251F6C23CB6B0B00DF2E2A /* StudentMistake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMistake.swift; sourceTree = "<group>"; };
+		D3251F6E23CB6B5B00DF2E2A /* StudentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentState.swift; sourceTree = "<group>"; };
 		D365FCB123C881240012F35E /* SISimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D365FCB423C881240012F35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D365FCB623C881240012F35E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3251F6823CB6ADA00DF2E2A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D3251F6923CB6AE400DF2E2A /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				D3B88B6523C8846400B24AB4 /* Student.swift */,
+				D3251F6A23CB6AF200DF2E2A /* CrowdedPerception.swift */,
+				D3251F6C23CB6B0B00DF2E2A /* StudentMistake.swift */,
+				D3251F6E23CB6B5B00DF2E2A /* StudentState.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
 		D365FCA823C881240012F35E = {
 			isa = PBXGroup;
 			children = (
@@ -125,11 +149,11 @@
 		D3B88B5E23C882F000B24AB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3251F6923CB6AE400DF2E2A /* Student */,
 				D3B88B7A23C8A17D00B24AB4 /* Distribution */,
 				D3B88B5F23C8830100B24AB4 /* Category.swift */,
 				D3B88B6123C8835E00B24AB4 /* Field.swift */,
 				D3B88B6323C8844F00B24AB4 /* StudyDepartmentEmployer.swift */,
-				D3B88B6523C8846400B24AB4 /* Student.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +200,7 @@
 		D3B88B9223CA130300B24AB4 /* Simulation */ = {
 			isa = PBXGroup;
 			children = (
+				D3251F6823CB6ADA00DF2E2A /* New Group */,
 				D3B88B9023CA128100B24AB4 /* TimeDependable.swift */,
 				D3B88B7623C899E500B24AB4 /* Simulation.swift */,
 				D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */,
@@ -270,17 +295,20 @@
 				D3B88B7523C8976200B24AB4 /* SetupStudentsViewController.swift in Sources */,
 				D3B88B7023C890DE00B24AB4 /* SwitchCell.swift in Sources */,
 				D3B88B8523C9E88900B24AB4 /* StudentFactory.swift in Sources */,
+				D3251F6D23CB6B0B00DF2E2A /* StudentMistake.swift in Sources */,
 				D3B88B8923C9EC9400B24AB4 /* SimulationViewController.swift in Sources */,
 				D3B88B7923C89A7000B24AB4 /* StudentSetup.swift in Sources */,
 				D3B88B9423CA132700B24AB4 /* FieldQueue.swift in Sources */,
 				D3B88B8723C9EA2100B24AB4 /* SetupViewController.swift in Sources */,
 				D3B88B8F23CA101400B24AB4 /* SimulationTimer.swift in Sources */,
 				D3251F6123CB009400DF2E2A /* Array+Extension.swift in Sources */,
+				D3251F6F23CB6B5B00DF2E2A /* StudentState.swift in Sources */,
 				D3B88B6E23C88D8C00B24AB4 /* ButtonCell.swift in Sources */,
 				D365FCB523C881240012F35E /* AppDelegate.swift in Sources */,
 				D3251F5F23CA1E6900DF2E2A /* Int+Extension.swift in Sources */,
 				D3B88B8D23CA0E0600B24AB4 /* Queue.swift in Sources */,
 				D365FCB723C881240012F35E /* SceneDelegate.swift in Sources */,
+				D3251F6B23CB6AF200DF2E2A /* CrowdedPerception.swift in Sources */,
 				D3251F6723CB651000DF2E2A /* EntireQueue.swift in Sources */,
 				D3B88B7C23C8A19E00B24AB4 /* FieldDistribution.swift in Sources */,
 				D3B88B6623C8846400B24AB4 /* Student.swift in Sources */,

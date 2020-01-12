@@ -13,7 +13,17 @@ final class Simulation {
     // MARK: - properties
 
     private var queue = EntireQueue()
+
     private var students: [Student]
+    private var waitingStudents: [Student] {
+        return students.filter { $0.state == .waiting }
+    }
+    private var doneStudents: [Student] {
+        return students.filter { $0.state == .problemSolved }
+    }
+    private var waitingInQueueStudents: [Student] {
+        return students.filter { $0.state == .waitingInQueue }
+    }
 
     private let usePanel: Bool
     private var shouldSimulate = true
@@ -74,6 +84,6 @@ final class Simulation {
     }
 
     private func controlIfSimulationShouldEnd() {
-        shouldSimulate = students.contains(where: { $0.problemSolved == false })
+        shouldSimulate = doneStudents.count != students.count
     }
 }
