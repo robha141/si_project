@@ -11,7 +11,7 @@ final class Student: TimeDependable {
     // MARK: - properties
 
     /// Time, when student will enter queue, in minutes. Default is 0, which means, student will enter queue immediatelly.
-    var timeToGoToQueue = 0
+    private(set) var timeToGoToQueue = 0
     /// Real field, which is student studying.
     let studyField: Field
     /// Field, to which is student going.
@@ -73,5 +73,13 @@ final class Student: TimeDependable {
     func goToCorrectQueue(in queues: [FieldQueue]) {
         queues.getQueue(according: studyField)
             .addStudentToQueue(student: self)
+    }
+
+    func getTicketWithTime(timeToGo: Int) {
+        var time = timeToGo
+        if time > 2 {
+            time += 2.randomLimitedValue()
+        }
+        timeToGoToQueue = time
     }
 }

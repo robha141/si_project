@@ -22,11 +22,8 @@ final class Panel: TimeDependable {
     /// Calculate waiting time according schedule. Function will assign time, when will student enter queue.
     func calculateWaitingTime(for student: Student) {
         guard let lastRecord = schedule[student.studyField] else { return }
-        var calculatedTime = lastRecord == 0 ? 0 : lastRecord + 1
+        let calculatedTime = lastRecord == 0 ? 0 : lastRecord + 1
         schedule[student.studyField] = calculatedTime + student.timeToSolveProblem
-        if calculatedTime > 2 {
-            calculatedTime += 2.randomLimitedValue()
-        }
-        student.timeToGoToQueue = calculatedTime
+        student.getTicketWithTime(timeToGo: calculatedTime)
     }
 }

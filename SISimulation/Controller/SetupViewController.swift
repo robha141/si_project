@@ -51,8 +51,7 @@ final class SetupSimulationViewController: UITableViewController {
 
     private func simulate() {
         guard case let .panel(value) = items[1] else { return }
-        let students = studentSetup.generateStudents()
-        simulation = Simulation(students: students, panelInUse: value)
+        simulation = Simulation(studentSetup: studentSetup, panelInUse: value)
         performSegue(withIdentifier: "Simulation", sender: self)
     }
 

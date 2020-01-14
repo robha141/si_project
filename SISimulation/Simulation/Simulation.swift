@@ -14,6 +14,7 @@ final class Simulation {
 
     private var queue = EntireQueue()
 
+    private var setup: StudentSetup
     private var students: [Student]
     private var waitingStudents: [Student] {
         return students.filter { $0.state == .waiting }
@@ -25,6 +26,8 @@ final class Simulation {
         return students.filter { $0.state == .waitingInQueue }
     }
 
+    private var numberOfArrivedStudents = 0
+    private let numberOfStutentsInQueue: Int
     private let usePanel: Bool
     private var shouldSimulate = true
     private var shouldGenerateStudents = true
@@ -36,12 +39,14 @@ final class Simulation {
     // MARK: - init
 
     /// Duration is in minutes, default is 60
-    init(students: [Student],
+    init(studentSetup: StudentSetup,
          panelInUse: Bool,
          duration: Int = 60) {
-        self.students = students
+        self.setup = studentSetup
+        self.students = studentSetup.generateStudents()
         self.students.shuffle()
         self.usePanel = panelInUse
+        self.numberOfStutentsInQueue = students.count
     }
 
     // MARK: - loop
@@ -68,7 +73,19 @@ final class Simulation {
     // MARK: - Time updates
 
     private func generateAnotherStudentToQueue() {
-        guard shouldGenerateStudents else { return }
+        guard shouldGenerateStudents,
+            isStudentGenerated() else { return }
+        let student = setup.generateRandomStudent()
+        if usePanel {
+            self.panel.calculateWaitingTime(for: student)
+        }
+        numberOfArrivedStudents += 1
+        students.append(student)
+    }
+
+    private func isStudentGenerated() -> Bool {
+        return [setup.arriveSance, 100 - setup.arriveSance]
+            .randomNumber() == 0
     }
 
     /// Tick on every time dependable object.
@@ -102,7 +119,8 @@ final class Simulation {
         let highestWaitingTime = waitingTimes.max() ?? -1.0
         let lowestWaitingTime = waitingTimes.min() ?? -1.0
         return [
-            SimulationResultItem(name: "Number of students", value: "\(numberOfStudents)"),
+            SimulationResultItem(name: "Number of students", value: "\(numberOfStutentsInQueue)"),
+            SimulationResultItem(name: "Number of arrived students", value: "\(numberOfArrivedStudents)"),
             SimulationResultItem(name: "Average wating time (min)", value: "\(averageWaitingTime)"),
             SimulationResultItem(name: "Higest waiting time (min)", value: "\(highestWaitingTime)"),
             SimulationResultItem(name: "Lowest wating time (min)", value: "\(lowestWaitingTime)")

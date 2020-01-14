@@ -60,6 +60,21 @@ final class StudentSetup {
         ).makeStudents()
     }
 
+    func generateRandomStudent() -> Student {
+        let fieldIndex = distributions.map { $0.distribution }
+            .map { Double($0) }
+            .randomNumber()
+        let field = distributions[fieldIndex]
+        let categoryIndex = field.categoriesDistribution.map { $0.distribution }
+            .map { Double($0) }
+            .randomNumber()
+        let category = field.categoriesDistribution[categoryIndex]
+        return Student(
+            studyField: field.field,
+            problem: category.category,
+            mistakeSance: mistakeSance)
+    }
+
     // MARK: - evaluating values
 
     func evaluateValues() throws {
