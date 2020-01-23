@@ -18,7 +18,6 @@ final class SetupStudentsViewController: UITableViewController {
 
     // MARK: - view properties
 
-    @IBOutlet weak var arriveSanceTextField: UITextField!
     @IBOutlet weak var studentFieldMistakeTextField: UITextField!
     @IBOutlet weak var numberOfStudentsTextField: UITextField!
 
@@ -30,7 +29,6 @@ final class SetupStudentsViewController: UITableViewController {
         guard let setup = studentSetup else { fatalError("💥 StudentSetup should be injected at this point") }
         numberOfStudentsTextField.text = "\(setup.numberOfStudents)"
         studentFieldMistakeTextField.text = "\(setup.mistakeSance)"
-        arriveSanceTextField.text = "\(setup.arriveSance)"
     }
 
     // MARK: - actions

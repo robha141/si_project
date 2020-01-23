@@ -77,9 +77,7 @@ final class Student: TimeDependable {
 
     func getTicketWithTime(timeToGo: Int) {
         var time = timeToGo
-        if time > 2 {
-            time += 2.randomLimitedValue()
-        }
+        time += 2.randomLimitedValue()
         timeToGoToQueue = time
     }
 }

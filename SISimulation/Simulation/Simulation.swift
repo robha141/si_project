@@ -34,7 +34,7 @@ final class Simulation {
     private let panel = Panel()
 
     /// Duration of simulation in minutes
-    private let duration = 60
+    private let duration = 120
 
     // MARK: - init
 
@@ -84,8 +84,22 @@ final class Simulation {
     }
 
     private func isStudentGenerated() -> Bool {
-        return [setup.arriveSance, 100 - setup.arriveSance]
-            .randomNumber() == 0
+        switch StudentProbabilityIncoming(elapsedMinutes: SimulationTimer.totalMinutes, duration: duration) {
+        case .firstStage:
+            return [2, 98]
+                .randomNumber() == 0
+        case .secondStage:
+            return [1.3, 98.7]
+                .randomNumber() == 0
+        case .thirdStage:
+            return [0.7, 99.3]
+                .randomNumber() == 0
+        case .fourthStage:
+            return [0.4, 99.6]
+                .randomNumber() == 0
+        case .notGenerate:
+            return false
+        }
     }
 
     /// Tick on every time dependable object.

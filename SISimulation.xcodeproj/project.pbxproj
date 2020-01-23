@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3111B6423D9A58600F81D2A /* StudentProbabilityIncoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3111B6323D9A58600F81D2A /* StudentProbabilityIncoming.swift */; };
 		D3251F5F23CA1E6900DF2E2A /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F5E23CA1E6900DF2E2A /* Int+Extension.swift */; };
 		D3251F6123CB009400DF2E2A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6023CB009300DF2E2A /* Array+Extension.swift */; };
 		D3251F6323CB624C00DF2E2A /* WaitingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3111B6323D9A58600F81D2A /* StudentProbabilityIncoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProbabilityIncoming.swift; sourceTree = "<group>"; };
 		D3251F5E23CA1E6900DF2E2A /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		D3251F6023CB009300DF2E2A /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		D3251F6223CB624C00DF2E2A /* WaitingQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingQueue.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				D3B88B8E23CA101400B24AB4 /* SimulationTimer.swift */,
 				D3251F6423CB62DF00DF2E2A /* StudentQueue.swift */,
 				D3FE96D923CB97CC00E4DF5D /* Panel.swift */,
+				D3111B6323D9A58600F81D2A /* StudentProbabilityIncoming.swift */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				D3B88B8523C9E88900B24AB4 /* StudentFactory.swift in Sources */,
 				D3251F6D23CB6B0B00DF2E2A /* StudentMistake.swift in Sources */,
 				D3B88B8923C9EC9400B24AB4 /* SimulationViewController.swift in Sources */,
+				D3111B6423D9A58600F81D2A /* StudentProbabilityIncoming.swift in Sources */,
 				D3B88B7923C89A7000B24AB4 /* StudentSetup.swift in Sources */,
 				D3B88B9423CA132700B24AB4 /* FieldQueue.swift in Sources */,
 				D3B88B8723C9EA2100B24AB4 /* SetupViewController.swift in Sources */,
